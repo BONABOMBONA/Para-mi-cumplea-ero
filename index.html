@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de amor</title>
+    <link rel="stylesheet" href="stile2.css">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black; 
+            color: white; 
+        }
+
+        .envelope {
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #2a2a2a; 
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: center;
+        }
+
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 10px;
+            background-color: #d3a87c;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #410101;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #850202;
+        }
+
+        .content {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #333; 
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 14px;
+            font-family: 'Georgia', serif;
+            color: white; 
+        }
+
+        .link {
+            color: #3d0303;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .note {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #4d4d4d; 
+            border: 1px dashed #d3a87c;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .note a {
+            color: #b47b7b;
+            text-decoration: none;
+        }
+
+        .note a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="envelope">
+        <h2>Querido cumpleañero:</h2>
+        <p>Esta es una carta muy especial para ti.</p>
+
+        <div class="btn-container">
+            <button class="btn" id="btn-abrir">Abrir</button>
+            <button class="btn" id="btn-cerrar">Cerrar</button>
+        </div>
+
+        <div class="content" id="content">
+            <p>Te he dejado algo muy bonito :</p>
+            <div class="note">
+                <p>Picale aquí: <a href="carta.html" target="_blank">Aquí mero</a>. ¡Te amoo!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btnAbrir = document.getElementById('btn-abrir');
+        const btnCerrar = document.getElementById('btn-cerrar');
+        const content = document.getElementById('content');
+
+        btnAbrir.addEventListener('click', () => {
+            content.style.display = 'block';
+        });
+
+        btnCerrar.addEventListener('click', () => {
+            content.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
